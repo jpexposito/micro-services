@@ -5,11 +5,12 @@ import es.ejemplos.jpexposito.libro.service.impl.LibroServiceImpl;
 
 import java.util.Collection;
 
+
+import javax.jws.WebService;
+
 /**
  * Implementacion del servico Libro en Soap
  */
-import javax.jws.WebService;
-
 @WebService(endpointInterface="es.ejemplos.jpexposito.LibroSoapService", serviceName="Libro")
 public class LibroSoapServiceImp extends LibroServiceImpl implements LibroSoapService {
    public Collection<Libro> list() {
