@@ -28,7 +28,8 @@
     <bundle.version>2.3.5</bundle.version>
     <web>https://www.jpexposito.com</web>
     <cxf.version>3.3.6</cxf.version>
-    <cxf.fuse.version>3.3.6.fuse-780029-redhat-00001</cxf.fuse.version>
+    <jackson-version>2.11.3</jackson-version>
+    <cxf.fuse.version>3.4.3</cxf.fuse.version>
     
   </properties>
   <url>${web}</url>

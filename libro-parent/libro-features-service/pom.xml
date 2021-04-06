@@ -11,10 +11,12 @@
   <packaging>pom</packaging>
   <name>LIBRO-FEATURES-SERVICE</name>
   <url>${web}</url>
+  <!--
   <properties>
     <cxf-version>3.1.11</cxf-version>
-    <jackson-version>2.8.3</jackson-version>
+    <jackson-version>2.11.3</jackson-version>
   </properties>
+  -->
   <build>
     <resources>
         <resource>
