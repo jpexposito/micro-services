@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <features name="karaf-rest-example-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.4.0">
 
-    <repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf-version}/xml/features</repository>
-    <repository>mvn:org.apache.aries.jax.rs/org.apache.aries.jax.rs.features/1.0.6/xml</repository>
+    <repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features</repository>
+
+    <feature name="libro-dependency-system" version="${project.version}">
+        <feature>http</feature>
+        <feature>http-whiteboard</feature>
+        <feature dependency="true">web-console</feature>
+        <feature version="${cxf.version}">cxf-core</feature>
+        <feature version="${cxf.version}">cxf-jaxws</feature>
+        <feature version="${cxf.version}">cxf-jaxrs</feature>
+        <feature version="${cxf.version}">cxf-rt-security</feature>
+        <feature version="${cxf.version}">cxf-http</feature>
+        <feature version="${cxf.version}">cxf-jackson</feature>
+        <feature version="${cxf.version}">cxf-http</feature>
+        <feature version="${cxf.version}">cxf-databinding-jaxb</feature>
+    </feature>
+
 
     <feature name="libro-rest-dependency" version="${project.version}">
         <requirement>osgi.service;effective:=active;filter:=(objectClass=org.osgi.service.http.HttpService)</requirement>
         <feature dependency="true">aries-blueprint</feature>
-        <feature version="${cxf-version}" dependency="true">cxf-jaxrs</feature>
-        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-core/${jackson-version}</bundle>
-        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson-version}</bundle>
-        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-version}</bundle>
-        <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson-version}</bundle>
-        <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/${jackson-version}</bundle>
-        <feature dependency="true">felix-http</feature>
-        <feature dependency="true">web-console</feature>
+        <feature version="${project.version}">libro-dependency-system</feature>
+       
     </feature>
 
     <feature name="libro-soap-dependency" version="${project.version}">
         <feature>aries-blueprint</feature>
-        <feature version="${cxf.fuse.version}">cxf-core</feature>
-        <feature version="${cxf.fuse.version}">cxf-jaxws</feature>
-        <feature version="${cxf.fuse.version}">cxf-databinding-jaxb</feature>
+        <feature version="${project.version}">libro-dependency-system</feature>
     </feature>
-    
+
     <feature name="libro-common" version="${project.version}">
         <bundle>mvn:es.ejemplos.jpexposito/libro-api-service/${project.version}</bundle>
         <bundle>mvn:es.ejemplos.jpexposito/libro-impl-service/${project.version}</bundle>

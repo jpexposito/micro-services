@@ -1,10 +1,12 @@
 package es.ejemplos.jpexposito.api;
 
 import java.util.Objects;
+
 import java.io.Serializable;
 /**
  * Entidad basica de la api
  */
+
 public class Libro implements Serializable {
 
    private static final long serialVersionUID =1L;

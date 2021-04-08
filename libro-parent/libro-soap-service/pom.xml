@@ -28,7 +28,12 @@
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-frontend-jaxws</artifactId>
       <version>${cxf.version}</version>
-  </dependency>
+    </dependency>
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>8.0.1</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -44,12 +49,14 @@
             <Bundle-Name>${project.name}</Bundle-Name>
             <Bundle-Version>${project.version}</Bundle-Version>
             <Import-Package>javax.jws;version=!,
-                            *</Import-Package>          </instructions>
+              org.objectweb.asm;version=!,
+                            *</Import-Package>
+          </instructions>
         </configuration>
       </plugin>
 
     </plugins>
   </build>
 
-  
+
 </project>
