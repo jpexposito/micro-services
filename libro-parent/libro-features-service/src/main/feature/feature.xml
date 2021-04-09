@@ -18,6 +18,7 @@
     </feature>
 
 
+
     <feature name="libro-rest-dependency" version="${project.version}">
         <requirement>osgi.service;effective:=active;filter:=(objectClass=org.osgi.service.http.HttpService)</requirement>
         <feature dependency="true">aries-blueprint</feature>
@@ -44,6 +45,11 @@
         <feature version="${project.version}">libro-common</feature>
         <feature version="${project.version}">libro-soap-dependency</feature>
         <bundle>mvn:es.ejemplos.jpexposito/libro-soap-service/${project.version}</bundle>
+    </feature>
+
+    <feature name="libro-examples" version="${project.version}">
+        <feature version="${project.version}">libro-soap-example</feature>
+        <feature version="${project.version}">libro-rest-example</feature>
     </feature>
 
 </features>
