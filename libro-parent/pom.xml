@@ -16,6 +16,10 @@
     <module>libro-rest-service</module>
     <module>libro-features-service</module>
     <module>libro-soap-service</module>
+    <module>libro-soap-client</module>
+    <!--
+    <module>libro-soap-test</module>
+    -->
   </modules>
 
   <properties>
@@ -29,7 +33,11 @@
     <web>https://www.jpexposito.com</web>
     <cxf.version>3.3.1</cxf.version>
     <jackson-version>2.11.3</jackson-version>
-    
+    <package-client-soap>es.ejemplos.jpexposito.soap.ws.client</package-client-soap>
+    <jaxws-plugin-version>2.6</jaxws-plugin-version>
+    <junit.jupiter.version>5.6.0</junit.jupiter.version>
+    <jacoco.version>0.8.6</jacoco.version>
+    <maven-surefire-test>2.22.0</maven-surefire-test>
   </properties>
   <url>${web}</url>
 
@@ -52,13 +60,6 @@
       <version>${junit.jupiter.version}</version>
       <scope>test</scope>
     </dependency>
-    <!--
-    <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.osgi.core</artifactId>
-      <version>1.4.0</version>
-    </dependency>
-  -->
   </dependencies>
 
   <build>

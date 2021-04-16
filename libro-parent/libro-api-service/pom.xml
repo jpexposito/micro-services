@@ -14,11 +14,15 @@
   <packaging>bundle</packaging>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
     <export.package>es.ejemplos.jpexposito.api</export.package>
   </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>2.2.4-1</version>
+  </dependency>
+  </dependencies>
   <url>${web}</url>
   <build>
         <plugins>
