@@ -2,13 +2,13 @@ package es.ejemplos.jpexposito.api;
 
 import java.util.Objects;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 import java.io.Serializable;
 /**
  * Entidad basica de la api
  */
-@XmlRootElement
+//@XmlRootElement
 public class Libro implements Serializable {
 
    private static final long serialVersionUID =1L;
@@ -18,7 +18,7 @@ public class Libro implements Serializable {
    int ejemplares;
 
    public Libro() {
-      
+     super(); 
    }
 
 /**
@@ -70,7 +70,5 @@ public class Libro implements Serializable {
         Libro libro = (Libro) o;
         return Objects.equals(titulo, libro.titulo) && Objects.equals(isbn, libro.isbn) && ejemplares == libro.ejemplares;
    }
-
-
-   
+  
 }

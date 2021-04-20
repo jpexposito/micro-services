@@ -11,8 +11,6 @@
 
   <xs:element name="getResponse" type="tns:getResponse"/>
 
-  <xs:element name="libro" type="tns:libro"/>
-
   <xs:element name="list" type="tns:list"/>
 
   <xs:element name="listResponse" type="tns:listResponse"/>

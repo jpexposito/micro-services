@@ -10,6 +10,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import es.ejemplos.jpexposito.api.Libro;
 import es.ejemplos.jpexposito.libro.service.impl.LibroServiceImpl;
@@ -22,7 +23,7 @@ public class LibroRestService extends LibroServiceImpl {
 
     @Override
     @Path("/")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     @GET
     public Collection<Libro> list() {
         return super.list();
@@ -30,7 +31,7 @@ public class LibroRestService extends LibroServiceImpl {
 
     @Override
     @Path("/{isbn}")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON) 
     @GET
     public Libro get(@PathParam("isbn") String isbn) {
         return super.get(isbn);
@@ -38,7 +39,7 @@ public class LibroRestService extends LibroServiceImpl {
     
     @Override
     @Path("/")
-    @Consumes("application/json")
+    @Consumes(MediaType.APPLICATION_JSON)
     @POST
     public void add(Libro libro) {
         super.add(libro);
@@ -46,7 +47,7 @@ public class LibroRestService extends LibroServiceImpl {
 
     @Override
     @Path("/")
-    @Consumes("application/json")
+    @Consumes(MediaType.APPLICATION_JSON)
     @PUT
     public void update(Libro libro) {
         super.update(libro);

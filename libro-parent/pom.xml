@@ -17,9 +17,6 @@
     <module>libro-features-service</module>
     <module>libro-soap-service</module>
     <module>libro-soap-client</module>
-    <!--
-    <module>libro-soap-test</module>
-    -->
   </modules>
 
   <properties>
