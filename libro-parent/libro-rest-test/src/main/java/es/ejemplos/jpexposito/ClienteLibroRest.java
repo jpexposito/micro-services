@@ -36,10 +36,6 @@ public class ClienteLibroRest {
       client = ClientBuilder.newClient();
       client.register(new JacksonJsonProvider());
       objectMapper = new ObjectMapper();
-      //objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-      //objectMapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
-      //objectMapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
-
 
      url = "http://localhost:8181/cxf/libroRest/";
    }
